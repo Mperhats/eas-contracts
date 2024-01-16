@@ -15,7 +15,7 @@ error InvalidLength();
 error InvalidSignature();
 error NotFound();
 
-/// @notice A struct representing ECDSA signature data.
+/// @notice A struct representing an ECDSA signature data.
 struct Signature {
     uint8 v; // The recovery ID.
     bytes32 r; // The x-coordinate of the nonce R.
