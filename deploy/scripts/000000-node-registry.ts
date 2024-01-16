@@ -5,7 +5,7 @@ import { deploy, InstanceName, setDeploymentMetadata } from '../../utils/Deploy'
 const func: DeployFunction = async ({ getNamedAccounts }: HardhatRuntimeEnvironment) => {
   const { deployer } = await getNamedAccounts();
 
-  await deploy({ name: InstanceName.SchemaRegistry, from: deployer });
+  await deploy({ name: InstanceName.NodeRegistry, from: deployer });
 
   return true;
 };

@@ -6,7 +6,7 @@ import path from 'path';
 import { BaseContract, Interface, Signer } from 'ethers';
 import { config, deployments, ethers, getNamedAccounts } from 'hardhat';
 import { ABI, Address, DeployFunction, Deployment as DeploymentData } from 'hardhat-deploy/types';
-import { EAS, EIP712Proxy, Indexer, SchemaRegistry } from '../components/Contracts';
+import { EAS, EIP712Proxy, Indexer, SchemaRegistry, NodeRegistry } from '../components/Contracts';
 import Logger from '../utils/Logger';
 import { DeploymentNetwork } from './Constants';
 
@@ -33,6 +33,7 @@ const maxPriorityFee = MAX_PRIORITY_FEE ? BigInt(MAX_PRIORITY_FEE) : undefined;
 export enum NewInstanceName {
   EAS = 'EAS',
   SchemaRegistry = 'SchemaRegistry',
+  NodeRegistry = 'NodeRegistry',
   EIP712Proxy = 'EIP712Proxy',
   Indexer = 'Indexer'
 }
@@ -50,6 +51,7 @@ const deployed = <F extends BaseContract>(name: InstanceName) => ({
 const DeployedNewContracts = {
   EAS: deployed<EAS>(InstanceName.EAS),
   SchemaRegistry: deployed<SchemaRegistry>(InstanceName.SchemaRegistry),
+  NodeRegistry: deployed<NodeRegistry>(InstanceName.NodeRegistry),
   EIP712Proxy: deployed<EIP712Proxy>(InstanceName.EIP712Proxy),
   Indexer: deployed<Indexer>(InstanceName.Indexer)
 };
