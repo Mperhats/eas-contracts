@@ -129,7 +129,6 @@
     "prettier": "^3.1.0",
     "prettier-package-json": "^2.8.0",
     "prettier-plugin-solidity": "^1.2.0",
-    "sinon": "^17.0.1",
     "solc": "0.8.19",
     "solhint": "^4.0.0",
     "ts-node": "^10.9.1",
