@@ -35,7 +35,7 @@ contract SchemaRegistry is ISchemaRegistry, Semver {
 
         schemaRecord.uid = uid;
         _registry[uid] = schemaRecord;
-
+    
         emit Registered(uid, msg.sender, schemaRecord);
 
         return uid;

@@ -24,6 +24,7 @@ const TOPICS = {
 export const getSchemaUID = (schema: string, resolverAddress: string, revocable: boolean) =>
   solidityPackedKeccak256(['string', 'address', 'bool'], [schema, resolverAddress, revocable]);
 
+
 export const getUID = (
   schema: string,
   recipient: string,

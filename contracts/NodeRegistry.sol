@@ -1,4 +1,5 @@
 // SPDX-License-Identifier: MIT
+
 pragma solidity 0.8.19;
 
 import { INodeRegistry, NodeEntry } from "./INodeRegistry.sol"; 
@@ -23,14 +24,13 @@ contract NodeRegistry is INodeRegistry, Semver {
             uid: EMPTY_UID,
             name: entry.name,
             callbackUrl: entry.callbackUrl,
-            industry: entry.industry,
             location: entry.location,
             industryCode: entry.industryCode,
             nodeType: entry.nodeType,
             status: entry.status
         });
 
-        bytes32 uid = entry.uid;
+        bytes32 uid = _getUID(nodeEntry);
         if (_registry[uid].uid != EMPTY_UID) {
             revert AlreadyExists();
         }
@@ -38,7 +38,7 @@ contract NodeRegistry is INodeRegistry, Semver {
         nodeEntry.uid = uid;
         _registry[uid] = nodeEntry;
 
-        emit Registered(uid, msg.sender, entry);
+        emit Registered(uid, msg.sender, nodeEntry);
 
         return uid;
     }
@@ -46,5 +46,12 @@ contract NodeRegistry is INodeRegistry, Semver {
     /// @inheritdoc INodeRegistry
     function getNode(bytes32 uid) external view returns (NodeEntry memory) {
         return _registry[uid];
+    }
+
+    /// @dev Calculates a UID for a given node entry.
+    /// @param nodeEntry The input data.
+    /// @return node UID.
+    function _getUID(NodeEntry memory nodeEntry) private pure returns (bytes32) {
+        return keccak256(abi.encodePacked(nodeEntry.name, nodeEntry.callbackUrl, nodeEntry.industryCode));
     }
 }

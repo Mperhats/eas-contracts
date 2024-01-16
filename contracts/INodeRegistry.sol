@@ -12,7 +12,6 @@ struct NodeEntry {
     bytes32 uid; // Unique identifier
     string name; // Name of the node
     string callbackUrl; // Callback URL of the server for the node
-    string industry; // Industry code
     string[] location; // Array of h3 strings for the supported location
     string industryCode; // Industry code
     NodeType nodeType; // Type of the node (PSN or BSN)
