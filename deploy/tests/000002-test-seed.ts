@@ -4,7 +4,7 @@ import { NodeRegistry } from '../../typechain-types'; // Adjust the import path 
 import { describeDeployment } from '../../test/helpers/Deploy';
 import { DeployedContracts } from '../../utils/Deploy';
 import Logger from '../../utils/Logger';
-import { TEST_NODES_OUTPUT_PATH } from '../scripts/000008-test-seed';
+import { TEST_NODES_OUTPUT_PATH } from '../scripts/000002-test-seed';
 
 describeDeployment(__filename, () => {
   let nodeRegistry: NodeRegistry;
