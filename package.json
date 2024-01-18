@@ -54,6 +54,7 @@
     "deploy:optimism-sepolia": "HARDHAT_NETWORK=optimism-sepolia hardhat deploy",
     "deploy:optimism-goerli": "HARDHAT_NETWORK=optimism-goerli hardhat deploy",
     "deploy:base-goerli": "HARDHAT_NETWORK=base-goerli hardhat deploy",
+    "deploy:base-sepolia": "HARDHAT_NETWORK=base-sepolia hardhat deploy",
     "deploy:arbitrum-goerli": "HARDHAT_NETWORK=arbitrum-goerli hardhat deploy",
     "deploy:polygon-mumbai": "HARDHAT_NETWORK=polygon-mumbai hardhat deploy",
     "deploy:scroll-sepolia": "HARDHAT_NETWORK=scroll-sepolia hardhat deploy",

@@ -34,6 +34,9 @@ On-chain attestations will enable a powerful new range of web3 applications, inc
 * Content Filtering
 * And many more!
 
+## Environment Variables
+Set up your wallet [here](https://docs.base.org/guides/deploy-smart-contracts/)
+
 ## Deployments
 
 Please note that you can also import and use the addresses directly in your code using the `@ethereum-attestation-service/eas-contracts/deployments` deployment artifacts corresponding to your desired network.
