@@ -16,7 +16,6 @@ const {
   getNetworkName,
   save: saveContract,
   getExtendedArtifact,
-  getArtifact,
   run
 } = deployments;
 
@@ -79,46 +78,29 @@ interface SaveTypeOptions {
   contract: string;
 }
 
-const saveTypes = async (options: SaveTypeOptions) => {
+const saveTypes = (options: SaveTypeOptions) => {
   const { name, contract } = options;
-
-  const { sourceName } = await getArtifact(contract);
-  const contractSrcDir = path.dirname(sourceName);
 
   const typechainDir = path.resolve('./', config.typechain.outDir);
 
-  // for some reason, the types of some contracts are stored in a "Contract.sol" dir, in which case we'd have to use
-  // it as the root source dir
-  let srcDir;
-  let factoriesSrcDir;
-  if (fs.existsSync(path.join(typechainDir, sourceName))) {
-    srcDir = path.join(typechainDir, sourceName);
-    factoriesSrcDir = path.join(typechainDir, 'factories', sourceName);
-  } else {
-    srcDir = path.join(typechainDir, contractSrcDir);
-    factoriesSrcDir = path.join(typechainDir, 'factories', contractSrcDir);
-  }
+  const factoriesSrcDir = path.join(typechainDir, 'factories');
 
   const typesDir = path.join(getDeploymentDir(), 'types');
-  const destDir = path.join(typesDir, contractSrcDir);
-  const factoriesDestDir = path.join(typesDir, 'factories', contractSrcDir);
-
-  if (!fs.existsSync(destDir)) {
-    fs.mkdirSync(destDir, { recursive: true });
-  }
+  const factoriesDestDir = path.join(typesDir, 'factories');
 
   if (!fs.existsSync(factoriesDestDir)) {
     fs.mkdirSync(factoriesDestDir, { recursive: true });
   }
 
-  // save the factory typechain
-  fs.copyFileSync(
-    path.join(factoriesSrcDir, `${contract}__factory.ts`),
-    path.join(factoriesDestDir, `${name}__factory.ts`)
-  );
-
-  // save the typechain of the contract itself
-  fs.copyFileSync(path.join(srcDir, `${contract}.ts`), path.join(destDir, `${name}.ts`));
+  const factoryFilePath = path.join(factoriesSrcDir, `${contract}__factory.ts`);
+  if (fs.existsSync(factoryFilePath)) {
+    fs.copyFileSync(
+      factoryFilePath,
+      path.join(factoriesDestDir, `${name}__factory.ts`)
+    );
+  } else {
+    console.error(`Factory file not found for contract ${contract}: ${factoryFilePath}`);
+  }
 };
 
 export interface ArtifactData {
