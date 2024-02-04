@@ -1,5 +1,4 @@
 import { NamedAccounts, SupportedNetworks } from './data/NamedAccounts';
-import { DeploymentNetwork } from './utils/Constants';
 import 'hardhat-deploy';
 import 'hardhat-deploy-ethers';
 import '@nomicfoundation/hardhat-toolbox';
