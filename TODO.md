@@ -3,7 +3,8 @@
 - [ ] Remove all unused code.
 - [ ] Remove all networks besides base sepolia
 - [ ] Remove unused utils
-
+- [ ] migrate to yarn
+- [ ] semver back to 0.0.0
 
 - [ ] change the author in package.json 
 - [ ] change title of project in package.json
@@ -15,7 +16,7 @@
 
 - [ ] Build a simple interface to call the `registerNode` method in the registry contract
 - [ ] Build a simple interface to call the `getNode` method in the registry contract
-- [ ] Figure out how to subscribe to the emission event in the smart contract so that any indexer has the latest state
+- [ ] Figure out how to subscribe to the emission event in the smart contract so that any indexer has the latest state, (search EAS dev chat in tg for **Yeah, you can either subscribe to the Attested event that the EAS contract emits or using GraphQL**)
 - [ ] Build the GraphQL Indexer for the registry
 
 

@@ -4,7 +4,7 @@ import { Signer, encodeBytes32String } from 'ethers';
 import { NodeRegistry } from '../typechain-types';
 import Contracts from '../components/Contracts';
 
-import { NodeEntryStruct as NodeEntry } from '../typechain-types/contracts/NodeRegistry';
+import { NodeEntryStruct as NodeEntry } from '../typechain-types/NodeRegistry';
 import { ZERO_BYTES32 } from '../utils/Constants';
 import { getNodeUID } from '../utils/UID';
 
