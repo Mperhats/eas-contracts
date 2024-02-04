@@ -1,9 +1,7 @@
 import { ContractFactory, Signer } from 'ethers';
 import { ethers } from 'hardhat';
 import { ABI } from 'hardhat-deploy/types';
-import {
-  NodeRegistry__factory,
-} from '../typechain-types';
+import { NodeRegistry__factory } from '../typechain-types';
 
 export * from '../typechain-types';
 
@@ -63,7 +61,7 @@ export const attachOnly = <F extends ContractFactory>(
 /* eslint-disable camelcase */
 const getContracts = (signer?: Signer) => ({
   connect: (signer: Signer) => getContracts(signer),
-  NodeRegistry: deployOrAttach(NodeRegistry__factory, signer),
+  NodeRegistry: deployOrAttach(NodeRegistry__factory, signer)
 });
 /* eslint-enable camelcase */
 

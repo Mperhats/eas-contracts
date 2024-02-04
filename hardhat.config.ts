@@ -13,10 +13,7 @@ interface EnvOptions {
   PROFILE?: boolean;
 }
 
-const {
-  ETHERSCAN_API_KEY,
-  PROFILE: isProfiling
-}: EnvOptions = process.env as any as EnvOptions;
+const { ETHERSCAN_API_KEY, PROFILE: isProfiling }: EnvOptions = process.env as any as EnvOptions;
 
 const mochaOptions = (): MochaOptions => {
   let timeout = 600000;

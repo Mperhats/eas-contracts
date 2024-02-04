@@ -30,7 +30,7 @@ const maxFee = MAX_FEE ? BigInt(MAX_FEE) : undefined;
 const maxPriorityFee = MAX_PRIORITY_FEE ? BigInt(MAX_PRIORITY_FEE) : undefined;
 
 export enum NewInstanceName {
-  NodeRegistry = 'NodeRegistry',
+  NodeRegistry = 'NodeRegistry'
 }
 
 export const InstanceName = {
@@ -44,7 +44,7 @@ const deployed = <F extends BaseContract>(name: InstanceName) => ({
 });
 
 const DeployedNewContracts = {
-  NodeRegistry: deployed<NodeRegistry>(InstanceName.NodeRegistry),
+  NodeRegistry: deployed<NodeRegistry>(InstanceName.NodeRegistry)
 };
 
 export const DeployedContracts = {
@@ -54,9 +54,8 @@ export const DeployedContracts = {
 export const isMainnet = () => getNetworkName() === DeploymentNetwork.Mainnet;
 export const isBaseSepolia = () => getNetworkName() === DeploymentNetwork.BaseSepolia;
 export const isHardhat = () => getNetworkName() === DeploymentNetwork.Hardhat;
-export const isTestnet = () =>
-  isBaseSepolia() // ||
-  
+export const isTestnet = () => isBaseSepolia(); // ||
+
 export const isLive = () => isMainnet() || isTestnet();
 
 export const getDeploymentDir = () => {
@@ -94,10 +93,7 @@ const saveTypes = (options: SaveTypeOptions) => {
 
   const factoryFilePath = path.join(factoriesSrcDir, `${contract}__factory.ts`);
   if (fs.existsSync(factoryFilePath)) {
-    fs.copyFileSync(
-      factoryFilePath,
-      path.join(factoriesDestDir, `${name}__factory.ts`)
-    );
+    fs.copyFileSync(factoryFilePath, path.join(factoriesDestDir, `${name}__factory.ts`));
   } else {
     console.error(`Factory file not found for contract ${contract}: ${factoryFilePath}`);
   }

@@ -6,9 +6,9 @@ interface EnvOptions {
   DEPLOYER?: string;
 }
 
-const { 
+const {
   ETHEREUM_BASE_SEPOLIA_PROVIDER_URL = '',
-  DEPLOYER: deployer = 'ledger://0x0000000000000000000000000000000000000000' 
+  DEPLOYER: deployer = 'ledger://0x0000000000000000000000000000000000000000'
 }: EnvOptions = process.env as any as EnvOptions;
 
 export const SupportedNetworks = {
@@ -27,7 +27,7 @@ export const SupportedNetworks = {
     saveDeployments: true,
     accounts: [deployer].filter(Boolean),
     live: true
-  },
+  }
 };
 
 // value in key:value pair for the deployer is the index of the account in the accounts array for the matching network

@@ -2,10 +2,16 @@
 pragma solidity ^0.8.0;
 
 // Define an enum for a Provider Supporting Node and Buyer Supporting Node
-enum NodeType { PSN, BSN }
+enum NodeType {
+    PSN,
+    BSN
+}
 
 // Define an enum for the status
-enum NodeStatus { VERIFIED, UNVERIFIED }
+enum NodeStatus {
+    VERIFIED,
+    UNVERIFIED
+}
 
 // Define a struct for the Node Entry outside the interface
 struct NodeEntry {
@@ -26,7 +32,6 @@ interface INodeRegistry {
     /// @param registerer The address of the account used to register the schema.
     /// @param node The node entry data.
     event Registered(bytes32 indexed uid, address indexed registerer, NodeEntry node);
-
 
     /// @notice Registers a new node entry
     /// @param entry The NodeEntry data.

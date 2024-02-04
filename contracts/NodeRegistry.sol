@@ -2,10 +2,9 @@
 
 pragma solidity 0.8.19;
 
-import { INodeRegistry, NodeEntry } from "./INodeRegistry.sol"; 
+import { INodeRegistry, NodeEntry } from "./INodeRegistry.sol";
 import { EMPTY_UID } from "./Common.sol";
 import { Semver } from "./Semver.sol";
-
 
 /// @title NodeRegistry
 /// @notice The global node registry.

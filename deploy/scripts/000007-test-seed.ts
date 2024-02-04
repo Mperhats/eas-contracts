@@ -2,10 +2,17 @@ import fs from 'fs';
 import path from 'path';
 import { DeployFunction } from 'hardhat-deploy/types';
 import { HardhatRuntimeEnvironment } from 'hardhat/types';
-import { execute, InstanceName, isHardhat, isTestnet, setDeploymentMetadata, getDeploymentDir } from '../../utils/Deploy';
+import { NodeEntryStruct } from '../../typechain-types/INodeRegistry';
+import {
+  execute,
+  getDeploymentDir,
+  InstanceName,
+  isHardhat,
+  isTestnet,
+  setDeploymentMetadata
+} from '../../utils/Deploy';
 import Logger from '../../utils/Logger';
 import { getNodeUID } from '../../utils/UID'; // Ensure you have this utility function
-import { NodeEntryStruct } from '../../typechain-types/INodeRegistry';
 
 export const TEST_NODES_OUTPUT_PATH = path.join(getDeploymentDir(), '/test-nodes.json');
 
@@ -17,7 +24,7 @@ const NODES = [
     location: ['882681a339fffff'],
     industryCode: 'FOOD',
     nodeType: 0, // Corresponds to NodeType.PSN, for example
-    status: 0, // Corresponds to NodeStatus.VERIFIED, for example
+    status: 0 // Corresponds to NodeStatus.VERIFIED, for example
   },
   {
     name: 'Node Two',
@@ -25,8 +32,8 @@ const NODES = [
     location: ['882681a339fffff'],
     industryCode: 'FOOD',
     nodeType: 1, // Corresponds to NodeType.BSN
-    status: 0, // Corresponds to NodeStatus.VERIFIED
-  },
+    status: 0 // Corresponds to NodeStatus.VERIFIED
+  }
 ];
 
 const func: DeployFunction = async ({ getNamedAccounts }: HardhatRuntimeEnvironment) => {
@@ -35,7 +42,7 @@ const func: DeployFunction = async ({ getNamedAccounts }: HardhatRuntimeEnvironm
 
   for (const node of NODES) {
     const uid = getNodeUID(node as NodeEntryStruct);
-    
+
     await execute({
       name: InstanceName.NodeRegistry,
       methodName: 'registerNode',
@@ -47,10 +54,7 @@ const func: DeployFunction = async ({ getNamedAccounts }: HardhatRuntimeEnvironm
   }
 
   // Write registered nodes to JSON file
-  fs.writeFileSync(
-    TEST_NODES_OUTPUT_PATH,
-    JSON.stringify(registeredNodes, null, 2)
-  );
+  fs.writeFileSync(TEST_NODES_OUTPUT_PATH, JSON.stringify(registeredNodes, null, 2));
 
   Logger.log(`Registered nodes have been saved to ${TEST_NODES_OUTPUT_PATH}`);
 };
