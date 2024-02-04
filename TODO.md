@@ -29,3 +29,4 @@
     // issue https://github.com/NomicFoundation/hardhat/issues/3833 
     // await expect(res).to.emit(registry, 'Registered').withArgs(uid, await sender.getAddress(), nodeEntry);  
 ```
+
