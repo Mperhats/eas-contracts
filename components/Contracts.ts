@@ -2,26 +2,7 @@ import { ContractFactory, Signer } from 'ethers';
 import { ethers } from 'hardhat';
 import { ABI } from 'hardhat-deploy/types';
 import {
-  AttestationResolver__factory,
-  AttesterResolver__factory,
-  DataResolver__factory,
-  EAS__factory,
-  ExpirationTimeResolver__factory,
-  Indexer__factory,
-  PayingResolver__factory,
-  PermissionedEIP712Proxy__factory,
-  RecipientResolver__factory,
-  RevocationResolver__factory,
-  SchemaRegistry__factory,
   NodeRegistry__factory,
-  TestEAS__factory,
-  TestEIP712Proxy__factory,
-  TestEIP1271Signer__factory,
-  TestEIP1271Verifier__factory,
-  TestERC20Token__factory,
-  TestSchemaResolver__factory,
-  TokenResolver__factory,
-  ValueResolver__factory
 } from '../typechain-types';
 
 export * from '../typechain-types';
@@ -82,27 +63,7 @@ export const attachOnly = <F extends ContractFactory>(
 /* eslint-disable camelcase */
 const getContracts = (signer?: Signer) => ({
   connect: (signer: Signer) => getContracts(signer),
-
-  AttestationResolver: deployOrAttach(AttestationResolver__factory, signer),
-  AttesterResolver: deployOrAttach(AttesterResolver__factory, signer),
-  DataResolver: deployOrAttach(DataResolver__factory, signer),
-  EAS: deployOrAttach(EAS__factory, signer),
-  ExpirationTimeResolver: deployOrAttach(ExpirationTimeResolver__factory, signer),
-  Indexer: deployOrAttach(Indexer__factory, signer),
-  PayingResolver: deployOrAttach(PayingResolver__factory, signer),
-  PermissionedEIP712Proxy: deployOrAttach(PermissionedEIP712Proxy__factory, signer),
-  RecipientResolver: deployOrAttach(RecipientResolver__factory, signer),
-  RevocationResolver: deployOrAttach(RevocationResolver__factory, signer),
-  SchemaRegistry: deployOrAttach(SchemaRegistry__factory, signer),
   NodeRegistry: deployOrAttach(NodeRegistry__factory, signer),
-  TestEAS: deployOrAttach(TestEAS__factory, signer),
-  TestEIP712Proxy: deployOrAttach(TestEIP712Proxy__factory, signer),
-  TestEIP1271Signer: deployOrAttach(TestEIP1271Signer__factory, signer),
-  TestEIP1271Verifier: deployOrAttach(TestEIP1271Verifier__factory, signer),
-  TestERC20Token: deployOrAttach(TestERC20Token__factory, signer),
-  TestSchemaResolver: deployOrAttach(TestSchemaResolver__factory, signer),
-  TokenResolver: deployOrAttach(TokenResolver__factory, signer),
-  ValueResolver: deployOrAttach(ValueResolver__factory, signer)
 });
 /* eslint-enable camelcase */
 
