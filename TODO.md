@@ -1,18 +1,6 @@
 ## TODOs
-- [ ] Remove all EAS related stuff.
-- [ ] Remove all unused code.
-- [ ] Remove all networks besides base sepolia
-- [ ] clean up unused utils, including those in the Deploy.ts
-- [ ] migrate to yarn
-- [ ] semver back to 0.0.0
-
-- [ ] change the author in package.json 
-- [ ] change title of project in package.json
-
-
 - [ ] Get etherscan api key
 - [ ] run verify command for deployed contract on base-sepolia
-
 
 - [ ] Build a simple interface to call the `registerNode` method in the registry contract
 - [ ] Build a simple interface to call the `getNode` method in the registry contract
