@@ -14,10 +14,9 @@ Set up your wallet [here](https://docs.base.org/guides/deploy-smart-contracts/)
 
 ## Deployments
 
-Please note that you can also import and use the addresses directly in your code using the `@ethereum-attestation-service/eas-contracts/deployments` deployment artifacts corresponding to your desired network.
+Please note that you can also import and use the addresses directly in your code using the `@palette-labs/registry/deployments` deployment artifacts corresponding to your desired network.
 
 ### Mainnets
-
 #### Ethereum
 
 coming soon.
@@ -26,13 +25,24 @@ coming soon.
 
 #### Base Sepolia
 
-Version 1.0.1:
-* **EAS**:
-  * Contract: [0x4200000000000000000000000000000000000021](https://goerli.basescan.org/address/0x4200000000000000000000000000000000000021)
-  * Deployment and ABI: [EAS.json](./deployments/base-goerli/EAS.json)
-* **SchemaRegistry**:
-  * Contract: [0x4200000000000000000000000000000000000020](https://goerli.basescan.org/address/0x4200000000000000000000000000000000000020)
-  * Deployment and ABI: [SchemaRegistry.json](./deployments/base-goerli/SchemaRegistry.json)
+Version 0.0.1:
+* **NodeRegistry**:
+  * Contract: [0x90c35b5CC8785C8C963fEDF2Fd15A4286058021f](https://sepolia.basescan.org/address/0x4200000000000000000000000000000000000020)
+  * Deployment and ABI: [NodeRegistry.json](./deployments/base-goerli/NodeRegistry.json)
+
+* deployment logs
+```sh
+deploying "NodeRegistry" (tx: 0x843876e098172ef143fcae1589578f135e92e131e6bc70a7e2d839545930cfb9)...: deployed at 0x90c35b5CC8785C8C963fEDF2Fd15A4286058021f with 1024607 gas
+  executing NodeRegistry.registerNode (0x90c35b5CC8785C8C963fEDF2Fd15A4286058021f)
+  registerNode params: 
+    entry (tuple): [object Object]
+executing NodeRegistry.registerNode (tx: 0x2562816876520a369fd15ab5f72297de6e283426271aae2e858477008ba23d0c) ...: performed with 173019 gas
+  executing NodeRegistry.registerNode (0x90c35b5CC8785C8C963fEDF2Fd15A4286058021f)
+  registerNode params: 
+    entry (tuple): [object Object]
+executing NodeRegistry.registerNode (tx: 0xe24dd012297a701669e940772ffe50fc5b5754d4f712c2297de8ba3027e170a0) ...: performed with 192943 gas
+✨  Done in 18.21s.
+```
 
 ## Installation
 ```sh
