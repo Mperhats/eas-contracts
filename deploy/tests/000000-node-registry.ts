@@ -11,6 +11,6 @@ describeDeployment(__filename, () => {
   });
 
   it('should deploy the node registry', async () => {
-    expect(await registry.version()).to.equal('1.3.0');
+    expect(await registry.version()).to.equal('0.0.1');
   });
 });

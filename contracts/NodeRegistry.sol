@@ -15,7 +15,7 @@ contract NodeRegistry is INodeRegistry, Semver {
     mapping(bytes32 uid => NodeEntry nodeEntry) private _registry;
 
     /// @dev Creates a new NodeRegistry instance.
-    constructor() Semver(1, 3, 0) {}
+    constructor() Semver(0, 0, 1) {}
 
     /// @inheritdoc INodeRegistry
     function registerNode(NodeEntry calldata entry) external returns (bytes32) {

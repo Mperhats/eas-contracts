@@ -2,7 +2,7 @@
 - [ ] Remove all EAS related stuff.
 - [ ] Remove all unused code.
 - [ ] Remove all networks besides base sepolia
-- [ ] Remove unused utils
+- [ ] clean up unused utils, including those in the Deploy.ts
 - [ ] migrate to yarn
 - [ ] semver back to 0.0.0
 

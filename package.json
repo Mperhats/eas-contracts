@@ -1,12 +1,12 @@
 {
-  "name": "@ethereum-attestation-service/eas-contracts",
-  "version": "1.4.0",
-  "description": "Ethereum Attestation Service",
+  "name": "@palette-labs/registry",
+  "version": "0.0.1",
+  "description": "registry infrstructure for ocn",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ethereum-attestation-service/eas-contracts"
   },
-  "author": "Leonid Beder <leonid@lbeder.com>",
+  "author": "mike perhats <mike@noshdelivery.co> (https://github.com/Mperhats)",
   "license": "MIT",
   "main": "dist/typechain-types/index.js",
   "types": "dist/typechain-types/index.d.ts",
