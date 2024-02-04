@@ -180,7 +180,7 @@ export const deploy = async (options: DeployOptions) => {
 
   const data = { name, contract: contractName };
 
-  await saveTypes(data);
+  saveTypes(data);
 
   return res.address;
 };
