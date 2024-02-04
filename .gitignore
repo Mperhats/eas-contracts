@@ -11,20 +11,7 @@ typechain-types
 out
 
 deployments/mainnet/solcInputs/*
-deployments/arbitrum-one/solcInputs/*
-deployments/optimism/solcInputs/*
-deployments/base/solcInputs/*
-deployments/polygon/solcInputs/*
-deployments/scroll/solcInputs/*
-deployments/linea/solcInputs/*
-deployments/sepolia/solcInputs/*
-deployments/optimism-sepolia/solcInputs/*
-deployments/optimism-goerli/solcInputs/*
-deployments/base-goerli/solcInputs/*
-deployments/arbitrum-goerli/solcInputs/*
-deployments/polygon-mumbai/solcInputs/*
-deployments/scroll-sepolia/solcInputs/*
-deployments/linea-goerli/solcInputs/*
+deployments/base-sepolia/solcInputs/*
 deployments/hardhat/*
 !deployments/hardhat/.chainId
 

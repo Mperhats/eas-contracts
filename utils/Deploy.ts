@@ -6,7 +6,7 @@ import path from 'path';
 import { BaseContract, Interface, Signer } from 'ethers';
 import { config, deployments, ethers, getNamedAccounts } from 'hardhat';
 import { ABI, Address, DeployFunction, Deployment as DeploymentData } from 'hardhat-deploy/types';
-import { EAS, EIP712Proxy, Indexer, SchemaRegistry, NodeRegistry } from '../components/Contracts';
+import { Indexer, NodeRegistry } from '../components/Contracts';
 import Logger from '../utils/Logger';
 import { DeploymentNetwork } from './Constants';
 
@@ -49,10 +49,7 @@ const deployed = <F extends BaseContract>(name: InstanceName) => ({
 });
 
 const DeployedNewContracts = {
-  EAS: deployed<EAS>(InstanceName.EAS),
-  SchemaRegistry: deployed<SchemaRegistry>(InstanceName.SchemaRegistry),
   NodeRegistry: deployed<NodeRegistry>(InstanceName.NodeRegistry),
-  EIP712Proxy: deployed<EIP712Proxy>(InstanceName.EIP712Proxy),
   Indexer: deployed<Indexer>(InstanceName.Indexer)
 };
 
@@ -61,32 +58,10 @@ export const DeployedContracts = {
 };
 
 export const isMainnet = () => getNetworkName() === DeploymentNetwork.Mainnet;
-export const isArbitrumOne = () => getNetworkName() === DeploymentNetwork.ArbitrumOne;
-export const isOptimism = () => getNetworkName() === DeploymentNetwork.Optimism;
-export const isBase = () => getNetworkName() === DeploymentNetwork.Base;
-export const isPolygon = () => getNetworkName() === DeploymentNetwork.Polygon;
-export const isScroll = () => getNetworkName() === DeploymentNetwork.Scroll;
-export const isLinea = () => getNetworkName() === DeploymentNetwork.Linea;
-export const isSepolia = () => getNetworkName() === DeploymentNetwork.Sepolia;
-export const isOptimismSepolia = () => getNetworkName() === DeploymentNetwork.OptimismSepolia;
-export const isOptimismGoerli = () => getNetworkName() === DeploymentNetwork.OptimismGoerli;
-export const isBaseGoerli = () => getNetworkName() === DeploymentNetwork.BaseGoerli;
 export const isBaseSepolia = () => getNetworkName() === DeploymentNetwork.BaseSepolia;
-export const isArbitrumGoerli = () => getNetworkName() === DeploymentNetwork.ArbitrumGoerli;
-export const isPolygonMumbai = () => getNetworkName() === DeploymentNetwork.PolygonMumbai;
-export const isScrollSepolia = () => getNetworkName() === DeploymentNetwork.ScrollSepolia;
-export const isLineaGoerli = () => getNetworkName() === DeploymentNetwork.LineaGoerli;
 export const isHardhat = () => getNetworkName() === DeploymentNetwork.Hardhat;
 export const isTestnet = () =>
-  isSepolia() ||
-  isOptimismSepolia() ||
-  isOptimismGoerli() ||
-  isBaseGoerli() ||
-  isBaseSepolia() ||
-  isArbitrumGoerli() ||
-  isPolygonMumbai() ||
-  isLineaGoerli() ||
-  isScrollSepolia();
+  isBaseSepolia() // ||
   
 export const isLive = () => isMainnet() || isTestnet();
 
