@@ -5,7 +5,7 @@ import { HardhatRuntimeEnvironment } from 'hardhat/types';
 import { execute, InstanceName, isHardhat, isTestnet, setDeploymentMetadata, getDeploymentDir } from '../../utils/Deploy';
 import Logger from '../../utils/Logger';
 import { getNodeUID } from '../../utils/UID'; // Ensure you have this utility function
-import { NodeEntryStruct } from '../../typechain-types/contracts/INodeRegistry';
+import { NodeEntryStruct } from '../../typechain-types/INodeRegistry';
 
 export const TEST_NODES_OUTPUT_PATH = path.join(getDeploymentDir(), '/test-nodes.json');
 
