@@ -22,7 +22,9 @@
 ## Known Issues
 - The `/test/NodeRegistry.ts` test does not cover the emit() event when new nodes are registered. This is because the withArgs method in the testing library does not deep compare arrays within structs. Since the location field in the registry conrtract is an array of strings, the assertion will fail. 
 
-// known issue - withArgs doesn't deep compare arrays within structs, so the location assertion will fail the emit test
-// issue https://github.com/NomicFoundation/hardhat/issues/4207
-// issue https://github.com/NomicFoundation/hardhat/issues/3833 
-// await expect(res).to.emit(registry, 'Registered').withArgs(uid, await sender.getAddress(), nodeEntry);  
+```ts
+    // known issue - withArgs doesn't deep compare arrays within structs, so the location assertion will fail the emit test
+    // issue https://github.com/NomicFoundation/hardhat/issues/4207
+    // issue https://github.com/NomicFoundation/hardhat/issues/3833 
+    // await expect(res).to.emit(registry, 'Registered').withArgs(uid, await sender.getAddress(), nodeEntry);  
+```
