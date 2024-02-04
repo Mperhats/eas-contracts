@@ -21,6 +21,7 @@ export const NamedAccounts = {
     [DeploymentNetwork.OptimismSepolia]: deployer,
     [DeploymentNetwork.OptimismGoerli]: deployer,
     [DeploymentNetwork.BaseGoerli]: deployer,
+    [DeploymentNetwork.BaseSepolia]: deployer,
     [DeploymentNetwork.ArbitrumGoerli]: deployer,
     [DeploymentNetwork.PolygonMumbai]: deployer,
     [DeploymentNetwork.ScrollSepolia]: deployer,

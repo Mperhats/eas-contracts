@@ -147,7 +147,7 @@ const config: HardhatUserConfig = {
       saveDeployments: true,
       live: true
     },
-    [DeploymentNetwork.BaseSepolioa]: {
+    [DeploymentNetwork.BaseSepolia]: {
       chainId: 84532,
       url: ETHEREUM_BASE_SEPOLIA_PROVIDER_URL,
       saveDeployments: true,

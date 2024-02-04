@@ -12,7 +12,7 @@ export enum DeploymentNetwork {
   OptimismSepolia = 'optimism-sepolia',
   OptimismGoerli = 'optimism-goerli',
   BaseGoerli = 'base-goerli',
-  BaseSepolioa = 'base-sepolia',
+  BaseSepolia = 'base-sepolia',
   ArbitrumGoerli = 'arbitrum-goerli',
   PolygonMumbai = 'polygon-mumbai',
   ScrollSepolia = 'scroll-sepolia',

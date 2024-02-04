@@ -85,7 +85,7 @@ describe('NodeRegistry', function () {
     });
   });
 
-  describe('schema querying', () => {
+  describe('node querying', () => {
     it('should return a node', async () => {
       
       const node: NodeEntry = {

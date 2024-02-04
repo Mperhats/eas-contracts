@@ -37,7 +37,7 @@ const func: DeployFunction = async ({ getNamedAccounts }: HardhatRuntimeEnvironm
     const uid = getNodeUID(node as NodeEntryStruct);
     
     await execute({
-      name: InstanceName.NodeRegistry, // Update this to your NodeRegistry instance name
+      name: InstanceName.NodeRegistry,
       methodName: 'registerNode',
       args: [{ ...node, uid }],
       from: deployer
